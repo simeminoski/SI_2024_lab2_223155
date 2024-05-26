@@ -7,13 +7,23 @@ Simeon Minoski 223155
 имаме 9 предикатни јазли (точки на одлука) односно 7 if услови и 2 for циклуси па добиваме 7+2+1=10;
 4.  
 Тест случај 1: allItems е null
-Тест случај 2: allItems е празна листа
-Тест случај 3: Објект со име null и валиден баркод
-Тест случај 4: Објект со празно име и валиден баркод
-Тест случај 5: Објект без баркод,баркодот е null
-Тест случај 6: Објект со невалиден баркод,недозволени карактери
-Тест случај 7: Објект со валиден баркод и попуст
-Тест случај 8: Објект со валиден баркод без попуст
-Тест случај 9: Објект со попуст, цена над 300 и баркод почнува со '0'
-Тест случај 10: Сума поголема од payment
-Тест случај 11: Сума еднаква на payment
+Тест случај 2: Објект со празно име и валиден баркод
+Тест случај 3: Објект со невалиден баркод
+Тест случај 4: Објект со валиден баркод и попуст
+Тест случај 5: Објект со валиден баркод без попуст
+Тест случај 6: Објект со попуст, цена над 300 и баркод почнува со '0'
+Тест случај 7: Сума поголема од payment
+Тест случај 8: Сума еднаква или помала на payment
+
+5.
+if (item.getPrice() > 300 && item.getDiscount() > 0 && item.getBarcode().charAt(0) == '0')
+има три подуслови па имаме 2*2*2=8 вкупно случаи
+1.item.getPrice() > 300 && item.getDiscount() > 0 && item.getBarcode().charAt(0) == '0'
+2.item.getPrice() > 300 && item.getDiscount() > 0 && item.getBarcode().charAt(0) != '0'
+3.item.getPrice() > 300 && item.getDiscount() <= 0 && item.getBarcode().charAt(0) == '0'
+4.item.getPrice() > 300 && item.getDiscount() <= 0 && item.getBarcode().charAt(0) != '0'
+  5.item.getPrice() <= 300 && item.getDiscount() > 0 && item.getBarcode().charAt(0) == '0'
+  6.item.getPrice() <= 300 && item.getDiscount() > 0 && item.getBarcode().charAt(0) != '0'
+  7.item.getPrice() <= 300 && item.getDiscount() < 0 && item.getBarcode().charAt(0) == '0'
+  8.item.getPrice() <= 300 && item.getDiscount() < 0 && item.getBarcode().charAt(0) != '0'
+
